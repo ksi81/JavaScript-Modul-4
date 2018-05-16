@@ -97,7 +97,7 @@ function Cashier(name, products=[]){
     
     this.customerMoney = function(){
       let customerMoney  =0;
-      let customerInput= parseInt(prompt("Enter a Number", "1"), 10);
+      let customerInput= parseInt(prompt(`Сумма ваших покупок: ${this.totalPrice} грн, введите суму денег, которую вы даете`), 10);
       if(customerMoney>=0){
         this.customerMoney = customerInput;
       };
@@ -110,7 +110,9 @@ function Cashier(name, products=[]){
       console.log('Покупатель ввел суму ', y);
       if (y>=x){
         countChange = y - x;
-        return console.log(`ваша сдача : ${countChange} грн`);
+        alert(`ваша сдача : ${countChange} грн. Спасибо за покупк!`);
+        return console.log(`Ваша сдача : ${countChange} грн`);
+
       }
       console.log('Очень жаль, что-то пошло не так, приходите еще');
     };
