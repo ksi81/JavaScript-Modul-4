@@ -67,10 +67,10 @@ const products = {
 };
 
 const order = {
-  bread: 20,
+  bread: 2,
   milk: 2,
   apples: 1,
-  cheese: 1
+  cheese: 1,
 };
 
 
@@ -84,14 +84,14 @@ function Cashier(name, products=[]){
     this.countTotalPrice = function ()   {
       const productsList = Object.keys(this.products);
       const ordersList = Object.keys(order);
-      for (const product of ordersList) {
-        if (!productsList.includes(product)) {
-          alert(`Товара с именем ${product} нет`);
-          return null;
-        } else {
-          this.totalPrice += order[product] * products[product];
-        }
-      } console.log('Sum customer order',this.totalPrice);
+      for (const key of ordersList) {
+        // if (!productsList.includes(key)) {
+        //   alert(`Товара с именем ${key} нет`);
+        //   return null;
+        // } else {
+          this.totalPrice += order[key] * products[key];
+        // }
+      } console.log('Сума заказа покупателя',this.totalPrice);
     };
 
     
